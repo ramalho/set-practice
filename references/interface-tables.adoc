@@ -21,18 +21,12 @@
 [options="header"]
 |===============================================================================================================
 |Math symbol|Python operator| Python method       | description
-|           |               |   `s.isdisjoint(z)` | `s` and `z` are disjoint (have no elements in common)
-||||
 |   e ∈ S   | `e in s`      | `s.‗‗contains‗‗(e)` | element `e` is a member of `s`
-||||
 |   S ⊆ Z   | `s <= z`      |    `s.issubset(it)` | `s` is a subset of the set built from the iterable `it`
-||||
 |   S ⊂ Z   | `s < z`       |       `s.‗‗lt‗‗(z)` | `s` is a proper subset of the `z` set
-||||
 |   S ⊇ Z   | `s >= z`      |  `s.issuperset(it)` | `s` is a superset of the set built from the iterable `it`
-||||
 |   S ⊃ Z   | `s > z`       |       `s.‗‗gt‗‗(z)` | `s` is a proper superset of the `z` set
-||||
+|           |               |   `s.isdisjoint(z)` | `s` and `z` are disjoint (have no elements in common)
 |===============================================================================================================
 
 

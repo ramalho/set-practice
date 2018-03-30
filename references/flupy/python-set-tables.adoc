@@ -17,9 +17,9 @@
 ||||
 |  S \ Z    | `s - z`  |                        `s.‗‗sub‗‗(z)` | relative complement or difference between `s` and `z`
 |           | `z - s`  |                       `s.‗‗rsub‗‗(z)` | reversed `-` operator
-|           |          |                 `s.difference(it, …)` | difference between `s` all sets built from iterables `it` etc.
+|           |          |                 `s.difference(it, …)` | difference between `s` and all sets built from iterables `it` etc.
 |           | `s -= z` |                       `s.‗‗isub‗‗(z)` | `s` updated with difference between `s` and `z`
-|           |          |          `s.difference_update(it, …)` | `s` updated with difference between `s` all sets built from iterables `it` etc.
+|           |          |          `s.difference_update(it, …)` | `s` updated with difference between `s` and all sets built from iterables `it` etc.
 |           |          |          `s.symmetric_difference(it)` | complement of `s & set(it)`
 ||||
 |   S ∆ Z   | `s ^ z`  |                        `s.‗‗xor‗‗(z)` | symmetric difference (the complement of the intersection `s & z`)
