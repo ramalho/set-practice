@@ -37,4 +37,4 @@ Run tests:
 $ go test
 ```
 
-Check out the examples in `codepoint_set.go`.
+Check out the examples in `codepoint_test.go`.
