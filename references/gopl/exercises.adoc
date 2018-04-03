@@ -1,6 +1,6 @@
-# The Go Programming Languages
+# Selected exercises from GOPL
 
-## Selected exercises
+Exercises related to sets from _The Go Programming Language_ (http://www.gopl.io/[GOPL]) by A. A. Donovan & Brian W. Kernighan.
 
 ### Exercise 6.1
 
