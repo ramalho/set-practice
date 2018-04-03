@@ -31,4 +31,10 @@ $ ls
 codepoint_set.go  codepoints.go  _gen.go
 ```
 
+Run tests:
 
+```
+$ go test
+```
+
+Check out the examples in `codepoint_set.go`.
