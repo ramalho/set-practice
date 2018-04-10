@@ -1,4 +1,6 @@
-# Set of runes using `gen`
+[![GoDoc](https://godoc.org/github.com/standupdev/set-practice/go/gen/cptset?status.svg)](https://godoc.org/github.com/standupdev/set-practice/go/gen/cptset)
+
+# `CodepointSet`: a set of runes built with `gen`
 
 Install `gen`:
 
