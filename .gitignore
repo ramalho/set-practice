@@ -1,4 +1,6 @@
 .DS_Store
+.idea/
+.ipynb_checkpoints/
 
 # Binaries for programs and plugins
 *.exe
