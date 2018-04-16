@@ -6,7 +6,7 @@ import "github.com/standupdev/strset"
 func Deduplicate(input []string) (out []string) {
 	seen := strset.Make()
 	for _, elem := range input {
-		if !seen.Has(elem) {
+		if !seen.Contains(elem) {
 			out = append(out, elem)
 			seen.Add(elem)
 		}
