@@ -28,6 +28,9 @@ func (s *IntSet) Has(x int) bool {
 
 // Add adds the non-negative value x to the set.
 func (s *IntSet) Add(x int) {
+	if s.Has(x) {
+		return
+	}
 	word, bit := x/64, uint(x%64)
 	for word >= len(s.words) {
 		s.words = append(s.words, 0)
