@@ -96,8 +96,28 @@ func FromSlice(slice []int) *IntSet {
 
 func bitCount(word uint64) int {
 	count := 0
-	for bit := uint(0); bit < 64; bit++ {
+	for bit := range uint(64) {
 		count += int(word>>bit) & 1
 	}
 	return count
+}
+
+// Iter returns an iterator function that can be used with range-over-function in Go 1.24+
+// The iterator yields each integer in the set in ascending order.
+func (s *IntSet) Iter() func(func(int) bool) {
+	return func(yield func(int) bool) {
+		for i, word := range s.words {
+			if word == 0 {
+				continue
+			}
+			for j := 0; j < 64; j++ {
+				if word&(1<<uint(j)) != 0 {
+					value := 64*i + j
+					if !yield(value) {
+						return // Stop iteration if yield returns false
+					}
+				}
+			}
+		}
+	}
 }

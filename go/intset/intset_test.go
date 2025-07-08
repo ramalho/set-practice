@@ -2,13 +2,14 @@ package intset
 
 import (
 	"fmt"
+	"slices"
 	"testing"
 )
 
 var (
-	fibonacci = []int{0, 1, 2, 3, 5, 8}     // Fibonacci numbers < 10
-	primes    = []int{2, 3, 5, 7}           // prime numbers < 10
-	union     = []int{0, 1, 2, 3, 5, 7, 8}  // fibonnacci ∪ prime
+	fibonacci = []int{0, 1, 2, 3, 5, 8}    // Fibonacci numbers < 10
+	primes    = []int{2, 3, 5, 7}          // prime numbers < 10
+	union     = []int{0, 1, 2, 3, 5, 7, 8} // fibonnacci ∪ prime
 	empty     = []int{}
 	single    = []int{100} // set with element > 63
 )
@@ -112,6 +113,33 @@ func TestBitCount(t *testing.T) {
 			got := bitCount(tc.word)
 			if got != tc.want {
 				t.Errorf("bitCount(%b) = %d; want %d", tc.word, got, tc.want)
+			}
+		})
+	}
+}
+
+func TestIter(t *testing.T) {
+	var testCases = []struct {
+		name  string
+		input []int
+	}{
+		{"primes", primes},
+		{"empty", empty},
+		{"single", single},
+		{"fibonacci", fibonacci},
+		{"large_set", []int{0, 1, 63, 64, 650, 1270, 1280, 2000}},
+	}
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			s := FromSlice(tc.input)
+			var got []int
+
+			for value := range s.Iter() {
+				got = append(got, value)
+			}
+
+			if !slices.Equal(got, tc.input) {
+				t.Errorf("got %v, input %v", got, tc.input)
 			}
 		})
 	}
