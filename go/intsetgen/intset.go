@@ -76,7 +76,7 @@ func (s *IntSet[T]) String() string {
 		if word == 0 {
 			continue
 		}
-		for j := 0; j < 64; j++ {
+		for j := range 64 {
 			if word&(1<<uint(j)) != 0 {
 				if buf.Len() > len("{") {
 					buf.WriteByte(' ')
@@ -115,7 +115,7 @@ func (s *IntSet[T]) Iter() func(func(T) bool) {
 			if word == 0 {
 				continue
 			}
-			for j := 0; j < 64; j++ {
+			for j := range 64 {
 				if word&(1<<uint(j)) != 0 {
 					value := T(64*i + j)
 					if !yield(value) {
